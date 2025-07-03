@@ -54,3 +54,18 @@ cursor.execute ("""
         FOREIGN KEY (customer_id) REFERENCES Customers(customer_id)
    )
 """)
+
+cursor = alx_book_store.cursor()
+cursor.execute ("""
+    CREATE TABLE IF NOT EXISTS Order_Details(
+        orderdetailid INT AUTO_INCREMENT PRIMARY KEY,
+        order_id INT,
+        book_id INT,
+        quantity DOUBLE,
+        FOREIGN KEY (order_id) REFERENCES Orders(order_id),
+        FOREIGN KEY (book_id) REFERENCES Books(books_id)
+    )
+""")
+
+cursor.close()
+alx_book_store.close()
