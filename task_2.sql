@@ -33,3 +33,14 @@ cursor.execute ("""
 cursor.close()
 alx_book_store.close()
 
+cursor = alx_book_store.cursor()
+cursor.execute ("""
+    CREATE TABLE IF NOT EXISTS Customers(
+        customer_id INT AUTO INCREMENT PRIMARY KEY,
+        customer_name VARCHAR(215) NOT NULL,
+        email VARCHAR(215) NOT NULL UNIQUE,
+        address TEXT)
+""")
+
+cursor.close()
+alx_book_store.close()
