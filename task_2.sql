@@ -15,9 +15,6 @@ cursor.execute ("""
     )
 """)
 
-cursor.close()
-alx_book_store.close()
-
 cursor = alx_book_store.cursor()
 cursor.execute ("""
     CREATE TABLE IF NOT EXISTS Books(
@@ -30,9 +27,6 @@ cursor.execute ("""
     )
 """)
 
-cursor.close()
-alx_book_store.close()
-
 cursor = alx_book_store.cursor()
 cursor.execute ("""
     CREATE TABLE IF NOT EXISTS Customers(
@@ -42,13 +36,10 @@ cursor.execute ("""
         address TEXT)
 """)
 
-cursor.close()
-alx_book_store.close()
-
 cursor = alx_book_store.cursor()
 cursor.execute ("""
-    CREATE TABLES IF NOT EXISTS Orders(
-        order_id INT AUTO INCREMENT PRIMARY KEY,
+    CREATE TABLE IF NOT EXISTS Orders(
+        order_id INT AUTO_INCREMENT PRIMARY KEY,
         customer_id INT,
         order_date DATE,
         FOREIGN KEY (customer_id) REFERENCES Customers(customer_id)
