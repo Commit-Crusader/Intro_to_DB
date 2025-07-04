@@ -8,6 +8,7 @@ database = 'alx_book_store'
 )
 
 cursor = alx_book_store.cursor()
+
 cursor.execute ("""
     CREATE TABLE IF NOT EXISTS Authors(
         author_id INT AUTO_INCREMENT PRIMARY KEY,
@@ -15,7 +16,6 @@ cursor.execute ("""
     )
 """)
 
-cursor = alx_book_store.cursor()
 cursor.execute ("""
     CREATE TABLE IF NOT EXISTS Books(
         book_id INT AUTO_INCREMENT PRIMARY KEY,
@@ -27,7 +27,6 @@ cursor.execute ("""
     )
 """)
 
-cursor = alx_book_store.cursor()
 cursor.execute ("""
     CREATE TABLE IF NOT EXISTS Customers(
         customer_id INT AUTO INCREMENT PRIMARY KEY,
@@ -36,7 +35,6 @@ cursor.execute ("""
         address TEXT)
 """)
 
-cursor = alx_book_store.cursor()
 cursor.execute ("""
     CREATE TABLE IF NOT EXISTS Orders(
         order_id INT AUTO_INCREMENT PRIMARY KEY,
@@ -46,7 +44,6 @@ cursor.execute ("""
    )
 """)
 
-cursor = alx_book_store.cursor()
 cursor.execute ("""
     CREATE TABLE IF NOT EXISTS Order_Details(
         orderdetailid INT AUTO_INCREMENT PRIMARY KEY,
